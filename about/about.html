@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="This page is where a user will select whether they are contacting us or reading about the company">
+    <link rel="stylesheet" href="../project.css">
+    <title>Rising High Co. | Home</title>
+</head>
+<body>
+    <!---------------This Creates the header ------------------->
+    <header>
+        <div class="header">
+            <img src="../images/logo1.jpeg" alt="Rising High Co logo">
+            <div class="search-logo-container">
+                <div id="desktop-search">
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="What are you looking for?">
+                        <button class="search-button">Search</button>
+                    </div>
+                </div>
+                <div class="header-icons">
+                    <img src="../images/magnifying-glass.png" alt="Search" class="search-icon">
+                    <img src="../images/cart.jpeg" alt="Cart" class="cart-icon">
+                    <img src="../images/menu-icon.png" alt="Menu" class="menu-icon" onclick="menutoggle()">
+                </div>
+            </div>
+        </div>
+
+        <!---------------This Creates the navigation bar------------------->
+        <nav>
+            <div class="table-container">
+                <div id="desktop">
+                    <b>
+                        <a href="../home.html">Home</a> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        <a href="../men/mens.html">Men</a> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        <a href="../women/women.html">Women</a> 	&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        <a href="../accessories/accessories.html">Accessories</a> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        <a href="../deals/deals.html">Deals</a> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        <a href="../sale/sale.html">Sale</a> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        <a href="about.html">About</a>
+                    </b>
+                </div>
+                <table class="two-by-three" id="MenuItems">
+                    <tr>
+                        <td> <a href="../home.html">Home</a></td>
+                    </tr>
+                    <tr>
+                        <td> <a href="../men/mens.html">Men</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="../women/women.html">Women</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="../accessories/accessories.html">Accessories</a></td>
+                    </tr>
+                    <tr>
+                        <td> <a href="../deals/deals.html">Deals</a></td>
+                    </tr>
+                    <tr>
+                        <td> <a href="../sale/sale.html">Sale</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="about.html">About</a></td>
+                    </tr>
+                </table>
+            </div>
+        </nav>
+
+    </header>
+    <main>
+        <!---------------This Creates the featured products list------------------->
+        <h2>Featured Products</h2>
+
+        <div class="categories">
+            <div class="row">
+                <div class="col-2">
+                    <a href="detailed/ab-contactus.html">
+                        <img src="../images/contact-us.jpeg" alt="Contact Us" />
+                        <br><h4>Contact Us</h4>
+                    </a>
+                </div>
+                <div class="col-2">
+                    <a href="detailed/ab-aboutus.html">
+                        <img src="../images/about-us.jpeg" alt="About Us" />
+                        <br><h4>About Us</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <img src="../images/logo-inverted.jpeg" alt="Rising High Co logo">
+            <br><small><i>Copyright &copy 2024 Rising High Co. |</i></small>
+            <small><i><a href="mailto:risinghighco@outlook.com">RisingHighCo@outlook.com</a></i></small>
+        </footer>
+    </main>
+
+    <!------------JS------------>
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            }
+            else {
+                MenuItems.style.maxHeight = "0px";
+            }
+
+        }
+    </script>
+</body>
+</html>

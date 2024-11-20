@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="This page is where the user can view the skeletons hoodie item and/or add it to the cart to be purchased">
+    <link rel="stylesheet" href="../../../project.css">
+    <title>Rising High Co. | Home</title>
+</head>
+<body>
+
+    <header>
+        <div class="header">
+            <img src="../../../images/logo1.jpeg" alt="Rising High Co logo">
+            <div class="search-logo-container">
+                <div id="desktop-search">
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="What are you looking for?">
+                        <button class="search-button">Search</button>
+                    </div>
+                </div>
+                <div class="header-icons">
+                    <img src="../../../images/magnifying-glass.png" alt="Search" class="search-icon">
+                    <a href="../../../cart.html"> <img src="../../../images/cart.jpeg" alt="Cart" class="cart-icon"><span id="cart-count">0</span></a>
+                    <img src="../../../images/menu-icon.png" alt="Menu" class="menu-icon" onclick="menutoggle()">
+                </div>
+            </div>
+        </div>
+
+        <!---------------This Creates the navigation bar------------------->
+        <nav>
+            <div class="table-container">
+                <div id="desktop">
+                    <b>
+                        <a href="../../../home.html">Home</a> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        <a href="../../mens.html">Men</a> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        <a href="../../../women/women.html">Women</a> 	&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        <a href="../../../accessories/accessories.html">Accessories</a> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        <a href="../../../deals/deals.html">Deals</a> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        <a href="../../../sale/sale.html">Sale</a> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        <a href="../../../about/about.html">About</a>
+                    </b>
+                </div>
+                <table class="two-by-three" id="MenuItems">
+                    <tr>
+                        <td> <a href="../../../home.html">Home</a></td>
+                    </tr>
+                    <tr>
+                        <td> <a href="../../mens.html">Men</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="../../../women/women.html">Women</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="../../../accessories/accessories.html">Accessories</a></td>
+                    </tr>
+                    <tr>
+                        <td> <a href="../../../deals/deals.html">Deals</a></td>
+                    </tr>
+                    <tr>
+                        <td> <a href="../../../sale/sale.html">Sale</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="../../../about/about.html">About</a></td>
+                    </tr>
+                </table>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="product-page">
+            <h6><a href="../m-hoodies.html">Go back</a></h6>
+
+            <div class="categories">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="../../../images/skeletons-hoodie.png" />
+                    </div>
+                    <div class="col-description">
+                        <h3>Men's Skeletons Hoodie</h3>
+                        <h4>$50.00</h4>
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                            <input type="hidden" name="cmd" value="_s-xclick" />
+                            <input type="hidden" name="hosted_button_id" value="ZDGJZNBB9PQW6" />
+                            <table>
+                              <tr>
+                                <td>
+                                  <input type="hidden" name="on0" value="Size"/>
+                                  Size
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <select name="os0">
+                                    <option value="Small">
+                                      Small
+                                    </option>
+                                    <option value="Medium">
+                                      Medium
+                                    </option>
+                                    <option value="Large">
+                                      Large
+                                    </option>
+                                    <option value="XL">
+                                      XL
+                                    </option>
+                                    <option value="XXL">
+                                      XXL
+                                    </option>
+                                  </select>
+                                </td>
+                              </tr>
+                            </table>
+                            <input type="hidden" name="currency_code" value="USD" />
+                            <input type="image" src="../../../images/add-to-cart.png" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Add to Cart" />
+                          </form>
+                        <h4>Product Details</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <img src="../../../images/logo-inverted.jpeg" alt="Rising High Co logo">
+            <br><small><i>Copyright &copy 2024 Rising High Co. |</i></small>
+            <small><i><a href="mailto:risinghighco@outlook.com">RisingHighCo@outlook.com</a></i></small>
+        </footer>
+    </main>
+
+    <!------------JS------------>
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            }
+            else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        };
+    </script>
+    <script>
+        window.onload = function () {
+            const storedCount = local.storage.getItem("cartCount");
+            if (storedCount) {
+                document.getElementById("cart-count").innerText = storedCount;
+            }
+        }
+
+        function addToCart(productName, productSize, productPrice,) {
+            let cartCount = parseInt(localStorage.getItem("cartCount") || '0');
+            cartCount++;
+            document.getElementById("cart-count").innerText = cartCount;
+            localStorage.setItem("cartCount", cartCount);
+
+            let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+            cartItems.push({ name: productName, size: productSize, price: productPrice });
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+            alert(`${productName} added to cart!`);
+        }
+    </script>
+</body>
+</html>
