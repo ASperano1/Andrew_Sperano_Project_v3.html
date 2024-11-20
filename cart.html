@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="This page is where a user can view their cart and/or checkout with their items.">
+    <link rel="stylesheet" href="project.css">
+    <title>Rising High Co. | Home</title>
+</head>
+<body>
+    <!---------------This Creates the header ------------------->
+    <header>
+        <div class="header">
+            <img src="images/logo1.jpeg" alt="Rising High Co logo">
+            <div class="search-logo-container">
+                <div id="desktop-search">
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="What are you looking for?">
+                        <button class="search-button">Search</button>
+                    </div>
+                </div>
+                <div class="header-icons">
+                    <img src="images/magnifying-glass.png" alt="Search" class="search-icon">
+                    <img src="images/cart.jpeg" alt="Cart" class="cart-icon">
+                    <img src="images/menu-icon.png" alt="Menu" class="menu-icon" onclick="menutoggle()">
+                </div>
+            </div>
+        </div>
+
+        <!---------------This Creates the navigation bar------------------->
+        <nav>
+            <div class="table-container">
+                <div id="desktop">
+                    <b>
+                        <a href="men/mens.html">Men</a> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        <a href="women/women.html">Women</a> 	&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        <a href="accessories/accessories.html">Accessories</a> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        <a href="deals/deals.html">Deals</a> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        <a href="sale/sale.html">Sale</a> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        <a href="about/about.html">About</a>
+                    </b>
+                </div>
+                <table class="two-by-three" id="MenuItems">
+                    <tr>
+                        <td> <a href="men/mens.html">Men</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="women/women.html">Women</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="accessories/accessories.html">Accessories</a></td>
+                    </tr>
+                    <tr>
+                        <td> <a href="deals/deals.html">Deals</a></td>
+                    </tr>
+                    <tr>
+                        <td> <a href="sale/sale.html">Sale</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="about/about.html">About</a></td>
+                    </tr>
+                </table>
+            </div>
+        </nav>
+
+    </header>
+    <main>
+        
+        <h1>Your Items</h1>
+        <div id="cart-items" class="cart-items"></div>
+
+        <script src="https://www.paypal.com/sdk/js?client-id=BAArd18M_MBaJ6WxBtCg2OZnLzalb0WNwxqet-GzbuqYirh2DwYWpvRHW0k3h_4MuWYE6u2UMej_Y-4gEQ&components=hosted-buttons&disable-funding=venmo&currency=USD"></script>
+        <div id="paypal-container-YK7CL2VBXEHW4"></div>
+        <script>
+            paypal.HostedButtons({
+                hostedButtonId: "YK7CL2VBXEHW4",
+            }).render("#paypal-container-YK7CL2VBXEHW4")
+        </script>
+        <footer>
+            <img src="images/logo-inverted.jpeg" alt="Rising High Co logo">
+            <br><small><i>Copyright &copy 2024 Rising High Co. |</i></small>
+            <small><i><a href="mailto:risinghighco@outlook.com">RisingHighCo@outlook.com</a></i></small>
+        </footer>
+    </main>
+    <!------------JS------------>
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            }
+            else {
+                MenuItems.style.maxHeight = "0px";
+            }
+
+        }
+    </script>
+    <script>
+        function displayCartItems() {
+            const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+            const cartDiv = document.getElementById("cart-items");
+            cartDiv.innerHTML = '';
+
+            if (cartItems.length === 0) {
+                cartDiv.innerHTML = "<p>Your cart is empty.</p>";
+            }
+            else {
+                cartItems.forEach((item, index) => {
+                    const itemDiv = document.createElement("div");
+                    itemDiv.classList.add("cart-item");
+                    itemDiv.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}" class="product-img-small">
+                        <p>${item.name} - $${item.price}</p>
+                        <button onclick="removeFromCart(${index})">Remove</button>
+                    `;
+                    cartDiv.appendChild(itemDiv);
+                });
+            }
+        }
+        function removeFromCart(index) {
+            let cartItems = JSON.parse(localStorage.getItem("cartItems"));
+            cartItems.splice(index, 1);
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+            let cartCount = parseInt(localStorage.getItem("cartCount") || '0');
+            cartCount--;
+            localStorage.setItem("cartCount", cartCount);
+
+            displayCartItems();
+        }
+        window.onload = displayCartItems;
+    </script>
+</body>
+</html>

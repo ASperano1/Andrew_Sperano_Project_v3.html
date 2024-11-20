@@ -1,0 +1,610 @@
+﻿<!--
+
+/*This creates the white to gray gradient of the background*/
+body {
+    font-family: Verdana, Arial, sans-serif;
+    background: white;
+}
+/*organizes */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/*sets the header background color, text color, and alters the text*/
+header {
+    width: 100%;
+    background-color: white;
+    color: black;
+    font-family: Georgia, serif;
+    padding-bottom: .1em;
+    display: inline-block;
+    justify-content: space-between;
+}
+    /*sets the size of the logo*/
+    header img {
+        height: auto;
+        max-width: 200px;
+        width: auto;
+        padding-left: 5px;
+    }
+/*not used yet*/
+h1 {
+    text-align: left;
+    padding-top: .5em;
+    display: inline;
+    font-style: italic;
+}
+/*Sets the background color, padding, and aligns the text*/
+nav {
+    font-weight: bold;
+    text-align: center;
+    padding-top: .7em;
+    padding-bottom: .7em;
+    background-color: black;
+    align-content: center;
+    width: 100%;
+}
+
+    /*deletes the underline of the links and colors the words white */
+    nav a {
+        text-decoration: none;
+        color: white;
+        padding: 0;
+        display: auto;
+    }
+
+    nav ul {
+        display: table-column;
+    }
+
+#desktop-search {
+    display: none;
+}
+
+/*header*/
+h2 {
+    color: black;
+    font-family: Georgia, serif;
+    text-align: center;
+}
+/*header*/
+h4 {
+    color: black;
+    font-family: Georgia, serif;
+    text-align: center;
+}
+/*colors the company name red*/
+.rhc {
+    color: red;
+    font-size: 1.2em;
+}
+/*aligns and colors the footer of the document*/
+footer {
+    font-size: .70em;
+    font-style: italic;
+    text-align: center;
+    padding: 1em;
+    color: white;
+    border-top: 3px solid black;
+    background-color: black;
+}
+
+    footer img {
+        max-height: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /*deletes the underline of the email link and colors it red*/
+    footer a {
+        text-decoration: none;
+        color: red;
+    }
+/*organizes a chunk of the document, creates the shadow of the body*/
+#wrapper {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    background-color: #FFFFFF;
+    box-shadow: 5px 5px 5px black;
+}
+/*heading*/
+h3 {
+    font-family: Georgia, serif;
+}
+/*sets the display of the main section to block and sets the width*/
+main {
+    display: block;
+    width: 100%;
+    margin: 0;
+}
+/*attaches the logo to the document on the left side*/
+#logo {
+    height: 50px;
+    background-image: url(images/logo.jpeg);
+    background-position: left;
+    padding-left: 50px;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+/*previously used*/
+.logo-text {
+    text-align: left;
+    font-style: italic;
+    display: inline;
+}
+/*sets the paramaters for the row and col-2*/
+.categories {
+    max-width: 600px;
+    margin: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+/*centers and creates the border around items*/
+.col-2 {
+    min-width: 150px;
+    margin-bottom: 50px;
+    border: solid 3px black;
+    background-color: black;
+    align-items: center;
+}
+    /*sets the images in line*/
+    .col-2 img {
+        display: inline-block;
+        width: 180px;
+        height: 180px;
+    }
+    /*deletes the underline from the link of the items name*/
+    .col-2 h4 {
+        align-items: center;
+        color: white;
+        text-decoration: none;
+    }
+    /*deletes the underline from the link of the items name*/
+    .col-2 a {
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+    }
+
+.col-4 {
+    min-width: 100px;
+    margin-bottom: 50px;
+    border: solid 3px black;
+    background-color: black;
+    align-items: center;
+}
+    /*sets the images in line*/
+    .col-4 img {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 180px;
+        height: 180px;
+    }
+    /*deletes the underline from the link of the items name*/
+    .col-4 h4 {
+        align-items: center;
+        color: white;
+        text-decoration: none;
+    }
+    /*deletes the underline from the link of the items name*/
+    .col-4 a {
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+    }
+
+.col-description {
+    min-width: 250px;
+    height: auto;
+    margin-bottom: 50px;
+    border: solid 3px black;
+    text-align: left;
+}
+
+    .col-description p {
+        font-size: small;
+        margin-left: 10px;
+    }
+
+    .col-description h2 {
+        margin-left: 10px;
+        text-align: left;
+        display: block;
+    }
+    .col-description h3 {
+        text-align: left;
+        margin-left: 10px;
+        text-decoration: underline;
+    }
+
+    .col-description h4 {
+        text-align: left;
+        margin-left: 10px;
+    }
+
+    .col-description select {
+        justify-self: left;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+
+    .col-description input {
+        width: 25px;
+    }
+    input[type="image"] {
+        padding-top: 0;
+        width: 100px;
+        height: auto;
+    }
+
+    #imageForm input[type="image"] {
+        height: 15px !important;
+        width: auto !important;
+    }
+.main {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    flex-direction: column;
+}
+
+#desktop {
+    display: none;
+}
+
+#mobile {
+    display: none;
+}
+
+.mobile {
+    display: none;
+}
+
+.table-container {
+    display: center;
+}
+
+.two-by-three {
+    display: inline-block;
+    margin-left: 60%;
+    background: black;
+    overflow: hidden;
+    transition: max-height .5s;
+}
+
+    .two-by-three td {
+        border: 2px solid white;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+.menu-icon {
+    width: 20px;
+    margin-left: auto
+}
+
+.search-icon {
+    width: 20px;
+    margin-left: auto;
+}
+
+.cart-icon {
+    width: 25px;
+    margin-left: auto;
+}
+.cart-count {
+    padding-top: 0px;
+}
+.cart-items {
+    margin-top: 30px;
+}
+.cart-item {
+    margin-bottom: 15px;
+}
+
+.header-icons {
+    margin-left: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1em;
+    width: 80%;
+}
+
+input, textarea {
+    margin-bottom: .5em;
+}
+/*
+.product-page {
+}
+*/
+    .product-page h6 {
+        justify-content: left;
+        margin-left: 5%;
+    }
+
+    .product-page .col-4 img {
+        height: 225px;
+        width: 225px;
+    }
+
+@media (max-width: 400px) {
+    header img {
+        max-height: 30px;
+    }
+
+    footer img {
+        max-height: 30px;
+    }
+}
+
+@media (min-width: 400px) {
+    main {
+        background-color: white;
+        padding-top: 1px;
+    }
+
+    .two-by-three {
+        display: inline-block;
+        margin-left: 70%;
+    }
+
+        .two-by-three td {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    .col-2 img {
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+    }
+
+    .col-4 {
+        min-width: 200px;
+    }
+
+        .col-4 img {
+            width: 300px;
+            height: 300px;
+        }
+
+    .menu-icon {
+        width: 35px;
+        margin-left: auto
+    }
+
+    .search-icon {
+        width: 35px;
+        margin-left: auto;
+    }
+
+    .cart-icon {
+        width: 40px;
+        margin-left: auto;
+    }
+}
+
+@media (min-width: 600px) {
+    /*aligns items horizontally*/
+    body {
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+        background: linear-gradient( white, gray);
+    }
+
+
+
+    header {
+        display: center;
+        width: 100%;
+        align-content: center;
+        align-self: center;
+    }
+
+    .row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
+
+    .categories {
+        max-width: 1023px;
+        flex-direction: row;
+    }
+
+    .col-2 {
+        min-width: 150px;
+        margin-bottom: 5px;
+        border: solid 3px black;
+        background-color: black;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    #mobile {
+        display: none;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    #desktop {
+        display: none;
+    }
+
+    .col-2 img {
+        display: inline-block;
+        width: 280px;
+        height: 280px;
+    }
+
+    .col-4 img {
+        width: 225px;
+        height: 225px;
+    }
+
+    .table-container {
+        display: center;
+    }
+
+    .two-by-three {
+        display: inline-block;
+        margin-left: 75%;
+        overflow: hidden;
+    }
+
+        .two-by-three td {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    form {
+        display: grid;
+        grid-gap: 1em;
+        flex-direction: column;
+        padding-left: 1em;
+        width: 60%;
+        column-count: 2;
+        column-width: 10em 1fr;
+    }
+
+    input[type="submit"] {
+        width: 9em;
+        grid-column: 2;
+        gap: 10px;
+    }
+
+    .product-page h2 {
+        justify-content: left;
+        margin-right: 60%;
+    }
+}
+
+@media (max-width: 800px) {
+}
+
+@media (min-width: 800px) {
+    .two-by-three {
+        display: inline-block;
+        margin-left: 80%;
+    }
+
+        .two-by-three td {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    .col-4 img {
+        width: 300px;
+        height: 300px;
+    }
+    .col-description {
+        min-width: 350px;
+        margin-bottom: 20px;
+        border: solid 3px black;
+        text-align: left
+    }
+}
+
+@media (min-width: 950px) {
+
+    .two-by-three {
+        display: none;
+    }
+
+    .cart-icon {
+        width: 50px;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .search-icon {
+        display: none;
+    }
+
+    #desktop {
+        display: inline;
+    }
+
+    #desktop-search {
+        display: inline-flex;
+        margin-left: auto;
+    }
+
+    /*sets the search box*/
+    .search-box {
+        padding-right: 5px;
+        width: auto;
+        min-width: 20px;
+        display: inline-flex;
+        justify-content: right;
+        margin-left: auto;
+    }
+    /**/
+    .search-input {
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid black;
+        width: auto;
+        min-width: 20px;
+        display: inline-flex;
+    }
+    /*sets the background color, border, size of the text of the search button*/
+    .search-button {
+        padding: 10px;
+        background-color: black;
+        color: white;
+        border: 2px solid black;
+        font-size: 16px;
+        cursor: pointer;
+        width: auto;
+        min-width: 20px;
+        display: inline-flex;
+        height: 43px;
+    }
+
+    .search-logo-container {
+        margin-left: auto;
+        display: inline-flex;
+        max-height: 100px;
+    }
+
+    .col-4 {
+        min-width: 180px;
+    }
+
+        .col-4 img {
+            width: 180px;
+            height: 180px;
+        }
+}
+
+@media (min-width: 1200px) {
+    body {
+        width: 70%;
+    }
+
+    footer img {
+        max-height: 75px;
+    }
+}

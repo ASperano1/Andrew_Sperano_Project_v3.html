@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="The home page is where the user will first access typically. From here you can browse to different categories or mens and womens">
+    <link rel="stylesheet" href="project.css">
+    <title>Rising High Co. | Home</title>
+</head>
+<body>
+    <!---------------This Creates the header ------------------->
+    <header>
+        <div class="header">
+            <img src="images/logo1.jpeg" alt="Rising High Co logo">
+            <div class="search-logo-container">
+            
+                <div class="header-icons">
+                    <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
+                        <input type="hidden" name="cmd" value="_cart">
+                        <input type="hidden" name="business" value="RSF4TEW7CLW4Y">
+                        <input type="hidden" name="display" value="1">
+                        <input type="image" src="images/cart.jpeg" height="25px" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                        </form>
+                    <img src="images/menu-icon.png" alt="Menu" class="menu-icon" onclick="menutoggle()">
+                </div>
+            </div>
+        </div>
+
+<!---------------This Creates the navigation bar------------------->
+        <nav>
+            <div class="table-container">
+                <div id="desktop">
+                    <b>
+                        <a href="men/mens.html">Men</a> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        <a href="women/women.html">Women</a> 	&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        <a href="accessories/accessories.html">Accessories</a> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        <a href="deals/deals.html">Deals</a> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        <a href="sale/sale.html">Sale</a> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                        <a href="about/about.html">About</a>
+                    </b>
+                </div>
+                <table class="two-by-three" id="MenuItems">
+                    <tr>
+                        <td> <a href="men/mens.html">Men</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="women/women.html">Women</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="accessories/accessories.html">Accessories</a></td>
+                    </tr>
+                    <tr>
+                        <td> <a href="deals/deals.html">Deals</a></td>
+                    </tr>
+                    <tr>
+                        <td> <a href="sale/sale.html">Sale</a></td> 
+                    </tr>
+                    <tr>
+                        <td><a href="about/about.html">About</a></td>
+                    </tr>
+                </table>
+            </div>
+        </nav>
+
+    </header>
+    <main>
+        <!---------------This Creates the featured products list------------------->
+        <h2>Featured Products</h2>
+
+        <div class="categories">
+            <div class="row">
+                <div class="col-2">
+                    <a href="men/mens.html">
+                        <img src="images/mens shirt.jpeg" alt="Mens section" />
+                        <br><h4>Men's</h4>
+                    </a>
+                </div>
+                <div class="col-2">
+                    <a href="women/women.html">
+                        <img src="images/womens crop top.jpeg" alt="Women's section'" />
+                        <br><h4>Women's</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="categories">
+            <div class="row">
+                <div class="col-2">
+                    <a href="accessories/accessories.html">
+                        <img src="images/logo-backpack.png" alt="Accessories section" />
+                        <br><h4>Accessories</h4>
+                    </a>
+                </div>
+                <div class="col-2">
+                    <a href="sale/sale.html">
+                        <img src="images/Sale pic.jpeg" alt="Sale section" />
+                        <br><h4>Sale</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <img src="images/logo-inverted.jpeg" alt="Rising High Co logo">
+            <br><small><i>Copyright &copy 2024 Rising High Co. |</i></small>
+            <small><i><a href="mailto:risinghighco@outlook.com">RisingHighCo@outlook.com</a></i></small>
+        </footer>
+    </main>
+
+<!------------JS------------>
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            }
+            else {
+                MenuItems.style.maxHeight = "0px";
+            }
+                
+        }
+    </script>
+</body>
+</html>
